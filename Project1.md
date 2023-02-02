@@ -49,7 +49,7 @@
 
     `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
 
-    ![Apache-file9](./Images/Apache-file9.PNG)
+![Apache-file9](./Images/Apache-file9.PNG)
 
 
 *Exiting the MYSQL Shell*
