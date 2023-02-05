@@ -59,6 +59,7 @@
 ![Mysql-file4](./Images/Mysql-file4.PNG)
 
 
+
 *Starting the interactive script*
 
     `sudo mysql_secure_installation`
@@ -80,3 +81,41 @@
     `exit`
     
 ![Mysql-file9](./Images/Mysql-file9.PNG)
+
+
+### INSTALLING PHP
+
+    `sudo apt install php libapache2-mod-php php-mysql`
+
+![PHP-file1](./Images/PHP-file1.PNG)
+
+
+*Confirming the PHP version*
+
+    `php -v`
+
+![PHP-file2](./Images/PHP-file2.PNG)
+
+
+### CREATING A VIRTUAL HOST FOR YOUR WEBSITE USING APACHE
+
+**Setting up PROJECTLAMP Domain**
+
+*Creating the directory for projectlamp using ‘mkdir’*
+
+    `sudo mkdir /var/www/projectlamp`
+    `sudo chown -R $USER:$USER /var/www/projectlamp`
+
+![Projectlamp-file1](./Images/Projectlamp-file1.PNG)
+
+    `sudo vi /etc/apache2/sites-available/projectlamp.conf`
+
+![Projectlamp-file2](./Images/Projectlamp-file2.PNG)
+
+
+*Showing the new file in the sites-available directory using ‘ls’*
+
+    `sudo ls /etc/apache2/sites-available`
+
+![Projectlamp-file3](./Images/Projectlamp-file3.PNG)
+
