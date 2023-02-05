@@ -37,21 +37,46 @@
 
     `sudo apt install mysql-server`
 
-![Apache-file7](./Images/Apache-file7.PNG)
+![Mysql-file1](./Images/Mysql-file1.PNG)
 
  ### Logging into the MYSQL console
 
     `sudo mysql`
 
-![Apache-file8](./Images/Apache-file8.PNG)
+![Mysql-file2](./Images/Mysql-file2.PNG)
 
 *setting password for the root user*
 
     `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`
 
-![Apache-file9](./Images/Apache-file9.PNG)
+![Mysql-file3](./Images/Mysql-file3.PNG)
 
 
 *Exiting the MYSQL Shell*
 
-    `mysql> exit`
+    `exit`
+
+![Mysql-file4](./Images/Mysql-file4.PNG)
+
+
+*Starting the interactive script*
+
+    `sudo mysql_secure_installation`
+
+![Mysql-file5](./Images/Mysql-file5.PNG)
+![Mysql-file6](./Images/Mysql-file6.PNG)
+![Mysql-file7](./Images/Mysql-file7.PNG)
+
+
+*Log in test into MYSQL Console*
+
+    `sudo mysql -p`
+
+![Mysql-file8](./Images/Mysql-file8.PNG)
+
+
+*Exiting the MYSQL Console*
+
+    `exit`
+    
+![Mysql-file9](./Images/Mysql-file9.PNG)
