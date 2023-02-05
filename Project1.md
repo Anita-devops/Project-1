@@ -98,15 +98,15 @@
 
 
 ### CREATING A VIRTUAL HOST FOR YOUR WEBSITE USING APACHE
-
 **Setting up PROJECTLAMP Domain**
-
 *Creating the directory for projectlamp using ‘mkdir’*
 
     `sudo mkdir /var/www/projectlamp`
     `sudo chown -R $USER:$USER /var/www/projectlamp`
 
 ![Projectlamp-file1](./Images/Projectlamp-file1.PNG)
+
+*creating and opening a new configuration file in Apache’s sites-available directory*
 
     `sudo vi /etc/apache2/sites-available/projectlamp.conf`
 
