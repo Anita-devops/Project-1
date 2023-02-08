@@ -100,22 +100,25 @@
 ### CREATING A VIRTUAL HOST FOR YOUR WEBSITE USING APACHE
 **Setting up PROJECTLAMP Domain**
 *Creating the directory for projectlamp using ‘mkdir’*
-
     `sudo mkdir /var/www/projectlamp`
     `sudo chown -R $USER:$USER /var/www/projectlamp`
-
-![Projectlamp-file1](./Images/Projectlamp-file1.PNG)
-
-*creating and opening a new configuration file in Apache’s sites-available directory*
-
+*creating and opening a new configuration file in Apache’s sites-available directory*  
     `sudo vi /etc/apache2/sites-available/projectlamp.conf`
+*Enabling the new virtualhost*
+    `sudo a2ensite projectlamp`
+*disabling Apache’s default website*
+    `sudo a2dissite 000-default`
+*making sure your configuration file doesn’t contain syntax errors*
+    `sudo apache2ctl configtest`
+*reloading Apache so changes take effect*
+    `sudo systemctl reload apache2`
+*Creating an index.html file in location*
+    `sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html`
+    
+![Projectlamp-status1](./Images/Projectlamp-status1.PNG)
 
-![Projectlamp-file2](./Images/Projectlamp-file2.PNG)
+*Opening the created website URL using IP address on a browser*
+[The new website using IP](http://34.207.253.203/)
 
-
-*Showing the new file in the sites-available directory using ‘ls’*
-
-    `sudo ls /etc/apache2/sites-available`
-
-![Projectlamp-file3](./Images/Projectlamp-file3.PNG)
-
+*Opening the created website URL using public DNS name on a browser*
+[using public DNS name](http://ec2-34-207-253-203.compute-1.amazonaws.com/)
