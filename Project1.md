@@ -119,7 +119,7 @@
 
 *reloading Apache so changes take effect*
     `sudo systemctl reload apache2`
-    
+
 *Creating an index.html file in location*
     `sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html`
     
@@ -130,3 +130,33 @@
 
 *Opening the created website URL using public DNS name on a browser*
 [using public DNS name](http://ec2-34-207-253-203.compute-1.amazonaws.com/)
+
+### ENABLING PHP ON THE WEBSITE
+
+*Changing the order in which the index.php file is listed*
+    `sudo vim /etc/apache2/mods-enabled/dir.conf`
+    `<IfModule mod_dir.c>
+        #Change this:
+        #DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+        #To this:
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+    </IfModule>`
+
+*Reload Apache so the changes take effect*
+    `reload Apache so the changes take effect`
+
+*Creating a new file named index.php*
+    `vim /var/www/projectlamp/index.php`
+
+*Adding the text, PHP code, inside the file*
+    `<?php
+phpinfo();`
+
+![PHPEn-file1](./Images/PHPEn-file1.PNG)
+![PHPEn-file2](./Images/PHPEn-file2.PNG)
+
+*Removing the new file index.php*
+    `sudo rm /var/www/projectlamp/index.php`
+
+![PHPEn-file3](./Images/PHPEn-file3.PNG)
+
